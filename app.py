@@ -194,7 +194,7 @@ def show_login():
             
             # Güvenlik bilgilendirmesi
             st.markdown("---")
-            st.info("🛡️ Bu sistem güvenli oturum yönetimi kullanır")
+            st.info("🛡️ Bu sistem sha256 ile yüksek güvenlikli oturum yönetimi kullanır")
             st.caption(f"⏰ Oturum süresi: {SESSION_TIMEOUT} dakika")
 
 def show_logout_button():
