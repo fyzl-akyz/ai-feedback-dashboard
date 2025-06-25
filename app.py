@@ -280,7 +280,9 @@ def main():
                             st.write(f"**Kullanıcı:** {task['user_first_name']} {task['user_last_name']}")
                             st.write(f"**Grup:** {task['group']} ")
                             st.write(f"**Mesaj:** {task['original_message']}")
-                            st.write(f"**Tarih:** {datetime.fromisoformat(task['message_date'].replace('Z', '+00:00')).strftime('%H:%M %d.%m.%Y')}")
+                            utc_time = datetime.fromisoformat(task['message_date'].replace('Z', '+00:00'))
+                            local_time = utc_time + timedelta(hours=2)
+                            st.write(f"**Tarih:** {local_time.strftime('%H:%M %d.%m.%Y')}")
 
                         with col_b:
                             st.markdown("**🤖 AI Kararı:**")
